@@ -7,3 +7,6 @@ Tests are written using Jest.
 
 ## Switching back from TypeScript
 Around chapter 7, I realized I was having a lot of extra trouble testing my TSCode and running it in Node than I'd like. Starting here, I'm switching back to JS.
+
+### Incomplete:
+- chapter 07: 'Robot Efficiency' I found to be challenging. I will come back to it later.

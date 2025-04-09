@@ -5,6 +5,7 @@ import {
     routeRobot,
     mailRoute,
     goalOrientedRobot,
+    PGroup,
 } from '../javascript-exercises/chapter-07';
 
 describe ('VillageState', () => {
@@ -41,3 +42,17 @@ describe ('robots', () => {
     });
 });
 
+describe ('PGroup', () => {
+    it ('should pass the test cases given on the website', () => {
+        let a = PGroup.empty.add("a");
+        let ab = a.add("b");
+        let b = ab.delete("a");
+        
+        expect(a.has('a')).toBe(true);
+        expect(ab.has("a")).toBe(true);
+        expect(ab.has("b")).toBe(true);
+        expect(b.has("b")).toBe(true);
+        expect(a.has("b")).toBe(false);
+        expect(b.has("a")).toBe(false);
+    });
+});

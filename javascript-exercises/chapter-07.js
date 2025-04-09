@@ -143,3 +143,50 @@ ${robot2.name}: ${robot2Steps}`
     );
     return [robot1Steps,robot2Steps];
 }
+
+// come back here to complete 'Robot Efficiency' exercise later
+
+// exercise 'persistent group'
+export class PGroup {
+    #members;
+    /**
+     * 
+     * @param {Array<any>} members 
+     */
+    constructor (members) {
+        this.#members = members;
+    }
+
+    /**
+     * Checks whether this has given item.
+     * @param {any} item 
+     * @returns {boolean} True if item is in this PGroup; false otherwise
+     */
+    has (item) {
+        return this.#members.indexOf(item) > -1;
+    }
+
+    /**
+     * 
+     * @param {any} item 
+     * @returns {PGroup}
+     */
+    add (item) {
+        if (!this.has(item)) {
+            return new PGroup (this.#members.concat([item]));
+        } else return this;
+    }
+
+    /**
+     * 
+     * @param {any} item 
+     * @returns {PGroup}
+     */
+    delete (item) {
+        if (this.has(item)) {
+            return new PGroup (this.#members.filter(v => v !== item));
+        } else return this;
+    }
+
+    static empty = new this([]);
+}
